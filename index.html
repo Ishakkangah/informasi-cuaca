@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <!-- FONT GOOGLE -->
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css""
+    />
+    <!-- MY CSS  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- MY HTML  -->
+
+    <div class="wrapper">
+      <header>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>Weather App
+      </header>
+      <!-- Input part -->
+      <section class="input_part">
+        <p class="info_text">Please enter to valid city name</p>
+        <input
+          type="text"
+          placeholder="Please enter city"
+          spellcheck="false"
+          required
+        />
+        <div class="separator"></div>
+        <button id="btn_Location">Get Device Location</button>
+      </section>
+
+      <!-- Weather Part -->
+      <section class="weather_part">
+        <img src="assets/img/cloud.png" alt="Weather_part" />
+        <div class="temp">
+          <span class="numb">13</span>
+          <span class="deg">&#176;</span>C
+        </div>
+        <div class="weather">Cloud</div>
+        <div class="location">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <span>Ogan Komering Ilir , Indonesia</span>
+        </div>
+        <div class="buttom_details">
+          <div class="column fells">
+            <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+            <div class="details">
+              <div class="temp">
+                <span class="number">17</span>
+                <span class="deg">&#176;</span>C
+              </div>
+              <p>Fells Like</p>
+            </div>
+          </div>
+          <div class="column humidity">
+            <i class="fa fa-tint" aria-hidden="true"></i>
+            <div class="details">
+              <div class="temp">
+                <span class="numb">22</span>
+                <span class="deg">%</span>
+              </div>
+              <p>Humidity</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- MY SCRIPT -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

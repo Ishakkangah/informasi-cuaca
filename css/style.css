@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@700&family=Rubik:wght@300;400&family=Ubuntu:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+:root {
+  ---light: #fff;
+  ---dark: #000;
+  ---magenta: #de20b8;
+  ---button: #5454ee;
+  ---error: #de4343;
+  ---pending: #4bb94b;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: saturate(200%);
+}
+
+.wrapper {
+  background: var(---light);
+  max-width: 700px;
+  width: 95%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+  margin: auto 20px;
+}
+
+.wrapper header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  color: var(---button);
+  font-size: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.wrapper.active header {
+  font-size: 1.1em;
+  /* margin-left: 5px; */
+}
+
+header i {
+  margin-right: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header i:hover {
+  color: var(---magenta);
+  opacity: 0.9;
+}
+
+header i:active {
+  transform: scale(1.1);
+  color: var(---button);
+}
+
+.wrapper .input_part {
+  padding: 16px 20px;
+}
+
+.wrapper.active .input_part {
+  display: none;
+}
+
+.input_part .info_text {
+  display: none;
+  border-radius: 8px;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1em;
+  color: var(---light);
+  margin-bottom: 15px;
+}
+
+.info_text.error {
+  display: block;
+  background: var(---error);
+}
+
+.info_text.pending {
+  display: block;
+  background: var(---pending);
+}
+
+.input_part :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border-radius: 8px;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+.input_part input {
+  border: 2px solid #ddd;
+  font-size: 1em;
+}
+
+.input_part input:is(:focus, :valid) {
+  border: 2px solid var(---button);
+  font-size: 1em;
+  color: #333;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background: #ddd;
+  margin: 30px 0 20px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separator::before {
+  content: "Or";
+  position: absolute;
+  color: #bbb;
+  padding: 0 10px;
+  background: var(---light);
+}
+
+.input_part button {
+  color: var(---light);
+  background: var(---button);
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input_part button:hover {
+  color: var(---button);
+  background: var(---light);
+  border: 2px solid var(---button);
+}
+
+.input_part button:active {
+  transform: scale(1.07);
+  background: var(---button);
+  color: var(---light);
+}
+
+.wrapper .weather_part {
+  margin: 30px 0 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper.active .weather_part {
+  display: flex;
+}
+.weather_part img {
+  max-width: 125px;
+}
+
+.weather_part .temp {
+  display: flex;
+  font-size: 1.8em;
+  font-weight: 800;
+  color: #111;
+}
+
+.weather_part .temp .deg {
+  margin-right: 5px;
+  font-size: 0.9em;
+}
+
+.weather_part .weather {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #111;
+  margin: 10px 0;
+}
+
+.weather_part .location {
+  display: flex;
+  align-items: center;
+}
+
+.weather_part .location span {
+  color: #111;
+  font-size: 1em;
+  font-weight: 800;
+}
+
+.weather_part .location i {
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: var(---button);
+}
+
+.weather_part .buttom_details {
+  margin: 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.weather_part .buttom_details .column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather_part .buttom_details :where(.fells, .humidity) {
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+}
+
+.weather_part .buttom_details .column i {
+  font-size: 1.5em;
+  color: var(---button);
+  margin-right: 8px;
+}
+
+.column .details .temp {
+  font-size: 1em;
+  color: #444;
+}
+
+.column .details p {
+  font-size: 0.65em;
+  color: #444;
+}
